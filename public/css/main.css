@@ -1,0 +1,930 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #323232;
+}
+
+/*.btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: #272643;
+    color: #fff;
+    font-weight: 700;
+    min-width: 250px;
+    text-decoration: none;
+}
+*/
+
+.my-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: #272643;
+    color: #fff;
+    font-weight: 700;
+    min-width: 250px;
+    text-decoration: none;
+}
+
+.my-btn:hover 
+{
+    color: #fff;
+}
+
+.ellipticalbtn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 100px;
+    background-color: #272643;
+    color: #fff;
+    font-weight: 700;
+    min-width: 250px;
+    text-decoration: none;
+}
+
+.ellipticalbtn:hover
+{
+    cursor: pointer;
+}
+
+.btn span 
+{
+    display: block;
+}
+
+.container
+{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+/*=============================Header=============================*/
+
+.header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #272643;;
+}
+
+.logo
+{
+    display: block;
+    padding: 30px 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.link
+{
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-item
+{
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+.nav-item-link
+{
+    font-weight: 700;
+    transition: text-decoration 0.5s linear;
+}
+
+.nav-item:last-child
+{
+    margin-right: 0;
+}
+
+.nav-item-link:hover
+{
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.active
+{
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content
+{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #fff;
+}
+
+.dropdown-content a
+{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+
+
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
+
+}
+
+
+
+/*=============================Main=============================*/
+
+.main__functionality
+{
+    display: flex;
+    height: 650px;
+}
+
+.main__functionality__leftside
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+
+.main__functionality__rightside
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #679186;
+}
+
+
+.main__functionality__title
+{
+    font-size: 28px;
+    font-weight: 700;
+    display: inline-block;
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+.main__functionality__leftside__title
+{
+    color: #272643;
+}
+
+.main__functionality__rightside__title
+{
+    color: #fff;
+}
+
+.main__functionality__btn
+{
+    font-size: 24px;
+    font-weight: 700;
+    padding: 35px 55px;
+}
+
+.main__functionality__btn:hover 
+{
+    transition: background-color 0.5s linear, color 0.5s linear;
+}
+
+.main__functionality__leftside__btn
+{
+    background-color: #272643;
+    color: #fff;
+}
+
+.main__functionality__leftside__btn:hover 
+{
+    color: #272643;
+    background-color: #fff;
+}
+
+.main__functionality__rightside__btn
+{
+    background-color: #E3F6F5;
+    color: #272643;
+}
+
+.main__functionality__rightside__btn:hover
+{
+    background-color: #272643;
+    color: #E3F6F5;
+}
+
+.main__best-specialists
+{
+    background-color: #E3F6F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title
+{
+    padding: 45px 0;
+}
+
+.main__best-specialists__items
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.main__best-specialists__item
+{
+    margin-right: 50px;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__best-specialists__item
+{
+    padding: 20px 0;
+}
+
+.main__best-specialists__item__avatar
+{
+    margin-bottom: 20px;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+}
+
+.main__best-specialists__item__name
+{
+    margin-bottom: 8px;
+}
+
+
+.main__best-specialists__item__speciality
+{
+    margin-bottom: 20px;
+    color: #B9B9B9;
+    font-size: 14px;
+}
+
+.main__best-specialists__item__statistics
+{
+    display: flex;
+}
+
+.main__best-specialists__item__statistics__reviews
+{
+    margin-right: 35px;
+    font-weight: 300;
+}
+
+.main__best-specialists__item__statistics__rating
+{
+    font-weight: 300;
+}
+
+/*====================Home/About platform====================*/
+
+.title__container
+{
+    text-align: center;
+}
+
+.title__text
+{
+    display: inline-block;
+}
+
+.main__about__content
+{
+    margin-left: 35px;
+}
+
+.main__about__content__text
+{
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/*====================Home/Contacts====================*/
+
+.main__contacts
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__contacts__item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.main__contacts__item__heading
+{
+    margin-bottom: 30px;
+}
+
+/*====================Footer====================*/
+
+.footer 
+{
+    padding: 18px 0;
+    text-align: center;
+}
+
+
+/*====================Signup====================*/
+
+/*====================Signup/Main/SignupForm====================*/
+
+.main__form__title__text
+{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.main__form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__form__content__form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__form__content__form__item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.main__form__content__form__roles
+{
+    width: 100%;
+}
+
+.form-input
+{
+    background: #F6F7F9;
+    display: flex;
+    padding: 17px 20px;
+    gap: 10px;
+    border-radius: 8px;
+    width: 285px;
+    height: 50px;
+    border: 0px;
+}
+
+.label-input
+{
+    margin-bottom: 10px;
+}
+
+.main__form__content__form__submit
+{
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+
+    text-align: center;
+    vertical-align: middle;
+    /*padding: 25px 45px;*/
+    width: 320px;
+    height: 70px;
+    background-color: #272643;
+    border-radius: 100px;
+    border: 0px;
+}
+
+.main__form__content__form__roles
+{
+    margin-bottom: 20px;
+}
+
+.main__form__content__form__item__text__to-login
+{
+    text-decoration: underline;
+}
+
+/*====================Login====================*/
+
+/*====================Login/Main/Form====================*/
+.main__form__content__form__remember
+{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/*====================Profile====================*/
+
+/*====================Profile/Menu====================*/
+
+.profile__wrapper
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__item
+{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 0 35px;
+    text-align: center;
+}
+
+.menu__item .menu__item-link
+{
+    color: #B9B9B9;
+    font-weight: 500;
+}
+
+.menu__item-active
+{
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #000;
+}
+
+.menu__item-active .menu__item-link
+{
+    color: #272643;
+    font-weight: 500;
+}
+
+/*====================Profile/UserData====================*/
+
+.main
+{
+    min-height: 100vh;
+}
+
+/*====================Profile/UserData/General====================*/
+
+.profile__data
+{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+
+}
+
+.profile__data__general
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile__data__general__item
+{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.profile__data__general__item:last-child
+{
+    margin-bottom: 0;
+}
+
+.profile__data__general__avatar
+{
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+}
+
+.profile__data__general__name
+{
+    font-size: 20px;
+}
+
+.profile__data__general__secondary
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__data__general__secondary__item
+{
+    margin-bottom: 8px;
+}
+
+.profile__data__general__secondary__rating
+{
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.icon-star
+{
+    margin-right: 5px;
+}
+
+/*====================Profile/UserData/About====================*/
+
+.profile__data__about
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile__data__about__title
+{
+    margin-bottom: 10px;
+}
+
+.profile__data__about__text
+{
+    font-weight: 400;
+    color: #B9B9B9;
+}
+
+/*====================Profile/UserData/Spec====================*/
+
+.profile__data__spec
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+}
+
+.profile__data__spec hr 
+{
+    width: 100%;
+}
+
+.profile__data__spec__item 
+{
+    margin-top: 15px;
+}
+
+.profile__data__spec__item__title
+{
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skills 
+{
+    width: 100%;
+}
+
+.skills__items
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills__item 
+{
+    margin-right: 30px;
+    padding: 5px 8px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.skills__item:last-child
+{
+    margin-right: 0;
+}
+
+.specializations 
+{
+    width: 100%;
+}
+
+.specializations__text
+{
+    color: #B9B9B9;
+    font-weight: 600;
+}
+
+.portfolio
+{
+    width: 100%;
+}
+
+.portfolio__text
+{
+    color: #B9B9B9;
+    font-weight: 600;
+}
+
+.not-centered
+{
+    align-items: baseline;
+}
+
+.portfolio-text
+{
+    text-align: left;
+    display: block;
+}
+
+/*====================Profile/Action====================*/
+
+.profile__action__btn
+{
+    min-width: max-content;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/*====================Consultations====================*/
+/*====================Consultations/Tabs====================*/
+.tabs 
+{
+    margin-bottom: 50px;
+}
+
+.tabs__items
+{
+    display: flex;
+
+}
+
+.tabs__item
+{
+    margin-right: 50px;
+}
+
+.tabs__body
+{
+    padding-top: 10px;
+}
+
+.tabs__block
+{
+    display: none;
+}
+
+.tabs__block:target
+{
+    display: block;
+}
+
+/*====================Consultations/Tabs/Active====================*/
+
+.consultations__item
+{
+    display: flex;
+    flex-direction: column;
+    padding: 25px 40px;
+    align-items: baseline;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 4px 7px rgba(0, 0, 0, 0.15);
+    max-width: max-content;
+    margin-bottom: 30px;
+}
+
+
+.consultations__item__info
+{
+    margin-bottom: 30px;
+    
+}
+
+.consultations__item__info__customer
+{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.consultations__item__info__specialist
+{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.consultations__item__actions
+{
+    display: flex;
+
+}
+
+.consultations__item__detailed
+{
+    margin-right: 10px;
+}
+
+/*====================Specialists catalog====================*/
+
+.catalog__title
+{
+    font-weight: 600;
+    font-size: 28px;
+    
+}
+
+/*====================Specialists catalog/Search query row====================*/
+
+.query
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search__form__item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search__query__wrapper
+{
+    min-width: 70%;
+}
+
+.search__query
+{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0px;
+    border: 1px solid #B9B9B9;
+}
+
+/*\\====================Specialists catalog/Search query row====================*/
+
+/*====================Specialists catalog/Filters====================*/
+
+.filters 
+{
+    padding: 0 85px;
+}
+
+.filter__row
+{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.filter__item 
+{
+    width: 50%;
+}
+
+/*\\====================Specialists catalog/Filters====================*/
+
+/*====================Specialists catalog/Items====================*/
+
+.catalog__items
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catalog__item 
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog__item__user__name
+{
+    margin-bottom: 15px;
+}
+
+.catalog__item__user__spec
+{
+    margin-bottom: 15px;
+}
+
+.catalog__item__user__about
+{
+    margin-bottom: 15px;
+}
+
+/*\\====================Specialists catalog/Items====================*/
+
+/*\\====================Specialists catalog====================*/
+
+/*====================Review/All reviews of user====================*/
+
+.reviews__wraper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews 
+{
+    width: 100%;
+}
+
+.review__title__text
+{
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+
+.review__item
+{
+    color: #323232;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 40px;
+    align-items: baseline;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 4px 7px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.review__item__info__text
+{
+    color: #323232;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.review__item__info__interlocutor
+{
+    color: #272643;
+    font-weight: 500;
+}
+
+/*\\====================Review/All reviews of user====================*/
