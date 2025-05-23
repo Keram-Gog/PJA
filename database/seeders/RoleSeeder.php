@@ -25,7 +25,7 @@ class RoleSeeder extends Seeder
         DB::table('roles')->insert
         (
             [
-                'name' => '2',
+                'name' => 'specialist',
             ],
         );
     }
