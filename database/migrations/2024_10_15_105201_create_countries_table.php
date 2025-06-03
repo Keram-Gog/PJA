@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeUsersTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class ChangeUsersTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('users', function (Blueprint $table)
-        {
-            $table->renameColumn('bidth_date', 'birth_date');
+        Schema::create('countries', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique(); // Уникальное имя страны
+            $table->timestamps();
         });
     }
 
@@ -27,10 +27,6 @@ class ChangeUsersTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::table('users', function (Blueprint $table)
-        {
-            $table->renameColumn('birth_date', 'bidth_date');
-        });
+        Schema::dropIfExists('countries');
     }
 }

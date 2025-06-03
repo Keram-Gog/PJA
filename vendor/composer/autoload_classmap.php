@@ -230,6 +230,7 @@ return array(
     'Database\\Factories\\Specialization_UserFactory' => $baseDir . '/database/factories/Specialization_UserFactory.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
     'Database\\Seeders\\CitySeeder' => $baseDir . '/database/seeders/CitySeeder.php',
+    'Database\\Seeders\\CountriesTableSeeder' => $baseDir . '/database/seeders/CountriesTableSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\PlatformSeeder' => $baseDir . '/database/seeders/PlatformSeeder.php',
     'Database\\Seeders\\RoleSeeder' => $baseDir . '/database/seeders/RoleSeeder.php',

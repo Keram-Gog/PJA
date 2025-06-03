@@ -13,7 +13,6 @@ class ChangeAppliesTable extends Migration
      */
     public function up()
     {
-        //
         Schema::table('applies', function (Blueprint $table) {
             $table->unsignedBigInteger('platform_id')->nullable()->change();
             $table->dateTime('connect_time')->nullable()->change();
@@ -31,8 +30,8 @@ class ChangeAppliesTable extends Migration
      */
     public function down()
     {
-        //
         Schema::table('applies', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('platform_id')->nullable(true)->change();
             $table->dateTime('connect_time')->nullable(true)->change();
             $table->integer('customer_rate')->nullable(true)->change();

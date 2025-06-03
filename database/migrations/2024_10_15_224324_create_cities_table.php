@@ -12,14 +12,14 @@ class CreateCitiesTable extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('cities', function (Blueprint $table) {
-        $table->mediumIncrements('id'); // Соответствует mediumInteger в вашей миграции
-        $table->string('name');
-        $table->string('country')->nullable();
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('cities', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignId('country_id')->constrained('countries')->onDelete('cascade'); // Внешний ключ на таблицу стран
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

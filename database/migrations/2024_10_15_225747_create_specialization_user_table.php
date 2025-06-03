@@ -30,6 +30,6 @@ class CreateSpecializationUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specialization__users');
+        Schema::dropIfExists('specialization__user');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeAppliesUsersTable extends Migration
+class ChangeUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class ChangeAppliesUsersTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::rename('apply_user', 'apply__users');
+        Schema::table('users', function (Blueprint $table)
+        {
+            // $table->renameColumn('birth_date', 'birth_date');
+        });
     }
 
     /**
@@ -24,7 +26,9 @@ class ChangeAppliesUsersTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::rename('apply__users', 'apply_user');
+        Schema::table('users', function (Blueprint $table)
+        {
+            $table->renameColumn('birth_date', 'bidth_date');
+        });
     }
 }

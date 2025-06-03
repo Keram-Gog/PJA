@@ -13,11 +13,10 @@ class AddCityToUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->mediumInteger('city_id', false, true)->nullable();
-            $table->foreign('city_id')->references('id')->on('cities');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->mediumInteger('city_id', false, true)->nullable();
+        //     $table->foreign('city_id')->references('id')->on('cities');
+        // });
     }
 
     /**
@@ -28,7 +27,6 @@ class AddCityToUser extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
             $table->dropForeign('users_city_id_foreign');
             $table->dropColumn('city_id');
         });

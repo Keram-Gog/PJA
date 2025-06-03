@@ -13,7 +13,7 @@ class CreateApplyUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('apply_user', function (Blueprint $table) {
+        Schema::create('apply__users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('users');
@@ -32,6 +32,6 @@ class CreateApplyUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apply_user');
+        Schema::dropIfExists('apply__users');
     }
 }

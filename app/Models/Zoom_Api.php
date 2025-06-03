@@ -7,10 +7,9 @@ namespace App\Models;
 // require_once 'php-jwt-master/src/BeforeValidException.php';
 // require_once 'php-jwt-master/src/ExpiredException.php';
 // require_once 'php-jwt-master/src/SignatureInvalidException.php';
-require_once 'php-jwt-master/src/JWT.php';
-
 use \Firebase\JWT\JWT;
 
+use Firebase\JWT\Key;
 
 class Zoom_Api
 {
@@ -21,14 +20,14 @@ class Zoom_Api
 	
 	//генерация JWT
 	private function generateJWTKey() {
-		$key = $this->zoom_api_key;
-		$secret = $this->zoom_api_secret;
-		$token = array(
-			"iss" => $key,
-			"exp" => time() + Zoom_Api::PLUS_TIME, 
-		);
-		return JWT::encode( $token, $secret );
-	}	
+    $key = $this->zoom_api_key;
+    $secret = $this->zoom_api_secret;
+    $token = [
+        "iss" => $key,
+        "exp" => time() + self::PLUS_TIME, 
+    ];
+    return JWT::encode($token, $secret, 'HS256');
+}
 	
 	//создаём митинг
     	public function createMeeting($data = array())

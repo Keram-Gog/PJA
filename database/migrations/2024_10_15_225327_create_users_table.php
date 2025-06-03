@@ -20,11 +20,18 @@ class CreateUsersTable extends Migration
             $table->string('name', 20)->nullable();
             $table->string('surname', 20)->nullable();
             $table->string('patronymic', 20)->nullable();
-            $table->date('bidth_date')->nullable();
+            $table->date('birth_date')->nullable();
             $table->string('about', 250)->nullable();
             $table->string('portfolio', 400)->nullable();
+            
+            // Добавляем поле city_id с внешним ключом на таблицу cities
+            $table->unsignedBigInteger('city_id')->nullable();
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('set null');
+
+            // Поле для роли пользователя
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
+
             $table->timestamps();
             $table->string('remember_token', 100)->nullable();
         });
@@ -37,10 +44,22 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table)
-        {
-            $table->dropForeign('users_role_id_foreign');
+        Schema::table('users', function (Blueprint $table) {
+            // Удаляем внешние ключи
+            $table->dropForeign(['role_id']);
+            $table->dropForeign(['city_id']);
         });
+
+        // Если у вас есть таблицы, ссылающиеся на users, например:
+        Schema::table('specialization__users', function (Blueprint $table) {
+            $table->dropForeign(['specialist_id']);
+        });
+
+        Schema::table('skill__users', function (Blueprint $table) {
+            $table->dropForeign(['specialist_id']);
+        });
+
+        // Теперь можно безопасно удалить таблицу users
         Schema::dropIfExists('users');
     }
 }

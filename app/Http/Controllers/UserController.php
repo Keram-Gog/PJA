@@ -73,7 +73,7 @@ class UserController extends Controller
         foreach($skillsIds as $skillId)
         {
             $newSkillUser = new Skill_User;
-            $newSkillUser->id = null;
+            // $newSkillUser->id = null;
             $newSkillUser->skill_id = $skillId;
             $newSkillUser->specialist_id = $user->id;
             $newSkillUser->created_at = time();
@@ -95,7 +95,7 @@ class UserController extends Controller
         foreach($specsIds as $specId)
         {
             $newSpecUser = new Specialization_User();
-            $newSpecUser->id = null;
+            // $newSpecUser->id = null;
             $newSpecUser->specialization_id = $specId;
             $newSpecUser->specialist_id = $user->id;
             $newSpecUser->created_at = time();
@@ -202,13 +202,13 @@ class UserController extends Controller
                 if(!$hasFreshApplyAlready)
                 {
                     $newApply = new Apply;
-                    $newApply->id = null;
+                    // $newApply->id = null;
                     $newApply->connect_time = null;
                     $newApply->status = ApplyStatuses::STATUSES['sended'];
                     $newApply->save();
 
                     $newApplyUser = new Apply_User;
-                    $newApplyUser->id = null;
+                    // $newApplyUser->id = null;
                     $newApplyUser->customer_id = $myId;
                     $newApplyUser->specialist_id = $anotherId;
                     $newApplyUser->apply_id = $newApply->id;

@@ -73,15 +73,17 @@ class ConsultationController extends Controller
                 $data['type'] 		= 2;
                 $data['password'] 	= 'abc'; //пароль
     
-    
+    $_url = 'https://zoom.us/ru/signin';
                 $response = $zoom_meeting->createMeeting($data);//создаём митинг
                 $apply->connect_time = $request->input('time');
                 $apply->platform_id = 2;
-                $apply->link = $response->join_url;
+                $apply->link = $_url;
+                // $apply->link = $response->join_url;
                 $apply->status = ApplyStatuses::STATUSES['replied'];
                 $apply->save();
 
-                echo 'Консультация создана и доступна по ссылке - ' . "<a href=". $response->join_url . ">" ."Ссылка</a>";
+                // echo 'Консультация создана и доступна по ссылке - ' . "<a href=". $response->join_url . ">" ."Ссылка</a>";
+                echo 'Консультация создана и доступна по ссылке - ' . "<a href=". $_url . ">" ."Ссылка</a>";
             }
             else
             {

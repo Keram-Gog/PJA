@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,14 +14,15 @@ class CreateAppliesTable extends Migration
     {
         Schema::create('applies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('platform_id');
+            $table->unsignedBigInteger('platform_id')->nullable();
             $table->foreign('platform_id')->references('id')->on('platforms');
-            $table->dateTime('connect_time');
+            $table->dateTime('connect_time')->nullable();
             $table->integer('status');
-            $table->integer('customer_rate');
-            $table->integer('specialist_rate');
-            $table->string('customer_comment', 250);
-            $table->string('specialist_comment', 250);
+            $table->string('link', 255)->nullable(); // Добавляем столбец link после статуса
+            $table->integer('customer_rate')->nullable();
+            $table->integer('specialist_rate')->nullable();
+            $table->string('customer_comment', 250)->nullable();
+            $table->string('specialist_comment', 250)->nullable();
             $table->timestamps();
         });
     }

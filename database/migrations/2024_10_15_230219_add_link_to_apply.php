@@ -13,10 +13,10 @@ class AddLinkToApply extends Migration
      */
     public function up()
     {
-        Schema::table('applies', function (Blueprint $table) {
-            //
-            $table->string('link', 200)->nullable();
-        });
+        // Schema::table('applies', function (Blueprint $table) {
+        //     // Добавление колонки link
+        //     $table->string('link', 200)->nullable();
+        // });
     }
 
     /**
@@ -27,7 +27,7 @@ class AddLinkToApply extends Migration
     public function down()
     {
         Schema::table('applies', function (Blueprint $table) {
-            //
+            // Удаление колонки link
             $table->dropColumn('link');
         });
     }
