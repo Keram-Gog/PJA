@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
-    && docker-php-ext-install pdo pdo_pgsql zip
+    libonig-dev \
+    && docker-php-ext-install pdo pdo_pgsql zip mbstring
+
 
 # Установим Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
