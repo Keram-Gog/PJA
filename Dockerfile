@@ -1,32 +1,31 @@
-# Используем официальный PHP-образ с поддержкой Composer и PostgreSQL
 FROM php:8.2-fpm
 
-# Установка системных зависимостей
+# Установим зависимости
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    unzip \
+    build-essential \
     libpq-dev \
-    libonig-dev \
     libzip-dev \
     zip \
-    && docker-php-ext-install pdo pdo_pgsql mbstring zip
+    unzip \
+    git \
+    curl \
+    && docker-php-ext-install pdo pdo_pgsql zip
 
-# Установка Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Установим Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Копируем файлы проекта
+# Рабочая директория
 WORKDIR /var/www
+
+# Копируем все файлы проекта
 COPY . .
 
-# Установка Laravel-зависимостей
+# Устанавливаем зависимости Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Генерация config cache (не забудь указать APP_KEY потом)
-RUN php artisan config:cache
+# Генерация кеша конфигурации (без APP_KEY всё равно работает)
+RUN php artisan config:cache || true
 
-# Указываем порт
+# Открываем порт 8000 и запускаем Laravel
 EXPOSE 8000
-
-# Команда запуска
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
