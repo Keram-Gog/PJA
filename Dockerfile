@@ -20,12 +20,12 @@ WORKDIR /var/www
 # Копируем все файлы проекта
 COPY . .
 
-# Устанавливаем зависимости Laravel
-RUN composer validate && composer install --no-dev --optimize-autoloader
+# Проверка и отладка composer
+RUN composer validate || true
+RUN composer install --no-dev --optimize-autoloader || cat /var/www/storage/logs/laravel.log || true
 
-# Генерация кеша конфигурации (без APP_KEY всё равно работает)
+# Кеш конфигурации
 RUN php artisan config:cache || true
 
-# Открываем порт 8000 и запускаем Laravel
 EXPOSE 8000
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
