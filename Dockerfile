@@ -21,7 +21,7 @@ WORKDIR /var/www
 COPY . .
 
 # Устанавливаем зависимости Laravel
-RUN composer install --no-dev --optimize-autoloader
+RUN composer validate && composer install --no-dev --optimize-autoloader
 
 # Генерация кеша конфигурации (без APP_KEY всё равно работает)
 RUN php artisan config:cache || true
